@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Điểm thi cao thứ 3 với đầu vào là một mảng điểm</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    let arr = [1, 7, 6, 8, 7, 8, 6, 2]
+    let max1 = 0;
+    let max2 = 0;
+    let max3 = 0;
+
+
+    function timMax3(array) {
+
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] >= max1) {
+                max1 = arr[i];
+            }
+        }
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === max1) {
+                continue;
+            } else if (arr[i] >= max2) {
+                max2 = arr[i];
+            }
+        }
+
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === max1 || arr[i] === max2) {
+                continue;
+            } else if (arr[i] >= max3) {
+                max3 = arr[i];
+            }
+        }
+        document.write('Tìm số lớn thứ 3 trong mảng là: ' + max3);
+    }
+
+    timMax3(arr)
+
+</script>
